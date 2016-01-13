@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<title>kiC-K-la</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	</head>
+
+	<body class="container">
+<div id="app" class="row">
+
+	<h1>Liste des élèves présents</h1>
+
+  <div id="students" class="col-md-12">
+    <form action="#">
+      <input type="text" id="input" placeholder="Prénom" class="student-firstname" required><br />
+      <input type="text" id="input" placeholder="Nom" class="student-lastname" required><br />
+      <input type="submit" name="submit" value="S'ajouter">
+    </form>
+  </div>
+
+  <h1>Liste des élèves</h1>
+  <ul class="student-list col-md-6"></ul>
+
+  <div class="presence-stats col-md-6">
+    <p>
+      Il y a <span class="student-total">0</span> élèves au total.
+    </p>
+    <p>
+      Il y a <span class="student-present">0</span> élèves présents.
+    </p>
+    <p>
+      Il y a <span class="student-absent">0</span> élèves absents.
+    </p>
+  </div>
+
+</div><!--#container-->
+
+    <!-- LIBS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+  <script type="text/javascript" src="backbone.localStorage-min.js"></script>
+  <!-- LIBS -->
+
+		<!-- Script de notre appli -->
+		<script src="models/student-model.js"></script>
+		<script src="collections/students-collection.js"></script>
+		<script src="views/students-list.js"></script>
+		<script src="app.js"></script>
+    <!-- Script de notre appli -->
+
+	</body>
