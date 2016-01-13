@@ -95,6 +95,7 @@ var StudentsListView = Backbone.View.extend({
     var student = this.myStudentCollection.findWhere({
       lastName: $input.parents('form').attr('data-name')
     });
+
     if (inputValue == 'present') {
       student.set({
         present: true,
@@ -105,10 +106,13 @@ var StudentsListView = Backbone.View.extend({
       })
     };
 
+    student.save();
+
 
     var presentStudents = this.myStudentCollection.where({
       present: true,
     });
+
     var presenceNumber = presentStudents.length;
 
     var absenceNumber = allMyStudents.length - presenceNumber;
@@ -117,7 +121,6 @@ var StudentsListView = Backbone.View.extend({
     $( ".student-present" ).append(presenceNumber);
     $( ".student-absent" ).empty();
     $( ".student-absent" ).append(absenceNumber);
-
 
     // console.log(presenceNumber, absenceNumber);
   }
